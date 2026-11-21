@@ -7,6 +7,11 @@ import HeroSection from "./components/homepage/hero-section";
 import Projects from "./components/homepage/projects";
 import Skills from "./components/homepage/skills";
 import Apps from "./components/homepage/apps";
+import AiDemo from "./components/homepage/ai-demo";
+import Certifications from "./components/homepage/certifications";
+import { certifications } from "@/utils/data/certifications";
+import { experiences } from "@/utils/data/experience";
+import { appsData } from "@/utils/data/apps-data";
 
 export default async function Home() {
 
@@ -14,10 +19,12 @@ export default async function Home() {
     <div suppressHydrationWarning >
       <HeroSection />
       <AboutSection />
-      <Experience />
+      {experiences.length > 0 && <Experience />}
       <Skills />
       <Projects />
-      <Apps />
+      <AiDemo />
+      {appsData.length > 0 && <Apps />}
+      {certifications.length > 0 && <Certifications />}
       <Education />
       <ContactSection />
     </div>

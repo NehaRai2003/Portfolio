@@ -3,69 +3,57 @@
 import { skillsData } from "@/utils/data/skills";
 import { skillsImage } from "@/utils/skill-image";
 import Image from "next/image";
-import Marquee from "react-fast-marquee";
+import { TbBinaryTree2 } from "react-icons/tb";
+import { VscSymbolClass } from "react-icons/vsc";
+import { HiOutlineCode } from "react-icons/hi";
+
+// Icons for skills that have no logo in utils/skill-image.js
+const fallbackIcons = { DSA: TbBinaryTree2, OOPS: VscSymbolClass };
+import Reveal from "../../helper/reveal";
+import SectionTitle from "../../helper/section-title";
+
+// One accent per card so the grid feels colorful.
+const accents = [
+  "hover:shadow-violet-500/30 group-hover:from-violet-500/25",
+  "hover:shadow-pink-500/30 group-hover:from-pink-500/25",
+  "hover:shadow-cyan-400/30 group-hover:from-cyan-400/25",
+  "hover:shadow-amber-400/30 group-hover:from-amber-400/25",
+  "hover:shadow-emerald-400/30 group-hover:from-emerald-400/25",
+  "hover:shadow-sky-400/30 group-hover:from-sky-400/25",
+];
 
 function Skills() {
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]">
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
+    <section id="skills" className="relative py-20 lg:py-28">
+      <SectionTitle label="Tech stack" title="Skills &" highlight="Tools" />
 
-      <div className="flex justify-center -translate-y-[1px]">
-        <div className="w-3/4">
-          <div className="h-[1px] bg-gradient-to-r from-transparent via-violet-500 to-transparent  w-full" />
-        </div>
-      </div>
-
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
-
-      <div className="w-full my-12">
-        <Marquee
-          gradient={false}
-          speed={80}
-          pauseOnHover={true}
-          pauseOnClick={true}
-          delay={0}
-          play={true}
-          direction="left"
-        >
-          {skillsData.map((skill, id) => (
-            <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
-              key={id}>
-              <div className="h-full w-full rounded-lg border border-[#1f223c] bg-[#11152c] shadow-none shadow-gray-50 group-hover:border-violet-500 transition-all duration-500">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        {skillsData.map((skill, i) => {
+          const accent = accents[i % accents.length];
+          const icon = skillsImage(skill)?.src;
+          return (
+            <Reveal key={skill} delay={i * 80}>
+              <div
+                className={`group relative h-full overflow-hidden rounded-2xl glass p-6 text-center transition-all duration-500 hover:-translate-y-2 hover:border-white/20 hover:shadow-2xl ${accent.split(" ")[0]}`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br from-transparent to-transparent transition-all duration-500 ${accent.split(" ")[1]}`} />
+                <div className="relative flex flex-col items-center gap-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/90 shadow-lg shadow-black/30 ring-1 ring-white/20 transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    {icon ? (
+                      <Image src={icon} alt={skill} width={36} height={36} className="h-9 w-9 object-contain" />
+                    ) : (
+                      (() => { const Fallback = fallbackIcons[skill] || HiOutlineCode; return <Fallback className="text-violet-600" size={32} aria-hidden="true" />; })()
+                    )}
                   </div>
-                </div>
-                <div className="flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="h-8 sm:h-10">
-                    <Image
-                      src={skillsImage(skill)?.src}
-                      alt={skill}
-                      width={40}
-                      height={40}
-                      className="h-full w-auto rounded-lg"
-                    />
-                  </div>
-                  <p className="text-white text-sm sm:text-lg">
-                    {skill}
-                  </p>
+                  <p className="font-display text-base font-semibold sm:text-lg">{skill}</p>
                 </div>
               </div>
-            </div>
-          ))}
-        </Marquee>
+            </Reveal>
+          );
+        })}
       </div>
-    </div>
+    </section>
   );
-};
+}
 
 export default Skills;

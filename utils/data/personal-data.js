@@ -1,15 +1,16 @@
 export const personalData = {
-  name: "Akash Kumar",
-  profile: '/profile.png',
-  designation: "Mobile Applications Developer",
+  name: "Neha Rai",
+  profile: '/neha-rai.png',
+  designation: "Software Developer",
 
-  description: "I am a Senior Mobile Application Developer with 3 years of experience building production apps from the ground up—from writing the first line of code to scaling live products serving over 500K active users. Working in fast-moving startups across the EdTech, Healthcare, and AI sectors, I have owned the entire mobile stack, including architecture decisions, API integrations, and CI/CD pipelines (GitHub Actions, Fastlane) for zero-touch deployments. I specialize in building scalable, cross-platform applications using Clean Architecture, GetX, BLoC, and Provider. With a focus on performance—achieving up to 70% performance gains—I consistently deliver complete, pixel-perfect front-end UI integrated with complex REST APIs, real-time WebSockets, and Firebase. From database schema to App Store and Play Store submissions, rollout strategies, and versioning, I thrive on taking a problem and turning it into a stable, shipped product.",
-  // description: "Mobile Application Developer with 3 years specializing in Flutter, Android, and iOS development. Delivered applications serving 500K+ users with 70% performance gains. Expert in Dart, Java, state management (GetX, Bloc, Provider), REST APIs, and CI/CD automation across EdTech, Healthcare, and AI sectors.",
-  email: 'akashkr15082000@gmail.com',
-  phone: '918002359221',
-  address: 'Gurugram, India',
-  github: 'https://github.com/Akash5256kumar',
-  linkedIn: 'https://www.linkedin.com/in/akash-kumar-61310b1a0/',
-  devUsername: "Akash5256kumar",
-  resume: "https://drive.google.com/file/d/1Z6o9YGCgNowRWLbovPC_HNHnjgpBinhq/view?usp=drivesdk"
+  description: "I am a Software Developer and a 2025 B.Tech graduate in Computer Science & Engineering with a specialization in Artificial Intelligence & Machine Learning from LNCT Bhopal (RGPV). I enjoy solving real-world problems with technology, and I have a strong foundation in DSA and OOPS, and I work with Python, MySQL, HTML and CSS, along with computer vision and machine learning tools like OpenCV and TensorFlow. For my major project, I built a Driver Drowsiness Detection System that uses face recognition to monitor a driver in real time and raise an alert when signs of sleepiness appear, helping prevent road accidents, and a Language Identification System that uses NLP and a Naive Bayes classifier to detect the language of a text. I have also earned certifications from Cisco and AWS in cybersecurity, cloud computing and machine learning. As a fresher, I am a quick learner, eager to grow, and looking for an opportunity to contribute to a team and build software that makes an impact.",
+  email: 'raineha5589@gmail.com',
+  phone: '',
+  address: 'Bhopal, Madhya Pradesh, India',
+  github: '',
+  linkedIn: 'https://www.linkedin.com/in/neha-rai-06aab0255/',
+  devUsername: "",
+  resume: "/neha-rai-resume.pdf",
+  languages: ['Hindi', 'English'],
+  softSkills: ['Problem Solving', 'Communication']
 }

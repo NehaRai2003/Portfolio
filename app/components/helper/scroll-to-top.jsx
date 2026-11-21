@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 
 const DEFAULT_BTN_CLS =
-  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out";
+  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-br from-violet-500 to-pink-500 p-4 text-white shadow-lg shadow-pink-500/30 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-pink-500/50";
 const SCROLL_THRESHOLD = 50;
 
 const ScrollToTop = () => {
@@ -27,7 +27,7 @@ const ScrollToTop = () => {
   const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <button className={btnCls} onClick={onClickBtn}>
+    <button className={btnCls} onClick={onClickBtn} aria-label="Scroll to top">
       <FaArrowUp />
     </button>
   );

@@ -1,21 +1,20 @@
 export const educations = [
   {
     id: 1,
-    title: "Bachelor of Technology in Information Technology",
-    duration: "2019 - 2023",
-    institution: "Techno Main Salt Lake Kolkata",
+    title: "B.Tech in Computer Science & Engineering (AI & ML)",
+    duration: "2021 - 2025",
+    institution: "LNCT Bhopal, RGPV",
   },
-
   {
     id: 2,
-    title: "Higher Secondary Education",
-    duration: "2017 - 2019",
-    institution: "P.R College Sonepur Bihar",
+    title: "Higher Secondary Education (12th)",
+    duration: "2021",
+    institution: "Ram Sunder Das Mahila College, Bihar",
   },
   {
     id: 3,
-    title: "Matriculation",
-    duration: "2010 - 2016",
-    institution: "VS Public School Bhopal"
-  }
+    title: "Secondary Education (10th)",
+    duration: "2019",
+    institution: "Bal Bharati Public School, Nishatpura, Bhopal",
+  },
 ]

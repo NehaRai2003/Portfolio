@@ -1,8 +1,8 @@
 export const contactsData = {
-    email: 'akashkr15082000@gmail.com',
-    phone: '918002359221',
-    address: 'Gurugram, India',
-    github: 'https://github.com/Akash5256kumar',
-    linkedIn: 'https://linkedin.com/in/akash-kumar',
-    devUsername: "Akash5256kumar"
+    email: 'raineha5589@gmail.com',
+    phone: '',
+    address: 'Bhopal, Madhya Pradesh, India',
+    github: '',
+    linkedIn: 'https://www.linkedin.com/in/neha-rai-06aab0255/',
+    devUsername: ""
 }
